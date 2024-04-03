@@ -5,6 +5,7 @@
   'westeurope'
 ])
 param location string = 'eastus'
+// param location string = 'southcentralus'
 
 @description('''
 Unique name for the deployed services below. Max length 15 characters, alphanumeric only:

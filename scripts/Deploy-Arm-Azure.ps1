@@ -31,11 +31,14 @@ if ($rg.length -eq 0) {
 }
 
 # TODO: Uncomment this when AZ CLI consistently returns a valid semantic version for AKS
-# Write-Host "Getting last AKS version in location $location" -ForegroundColor Yellow
-# $aksVersions=$(az aks get-versions -l $location --query  values[].version -o json | ConvertFrom-Json)
-# $aksLastVersion=$aksVersions[$aksVersions.Length-1]
-# Write-Host "AKS last version is $aksLastVersion" -ForegroundColor Yellow
-$aksLastVersion="1.27.3"
+Write-Host "Getting last AKS version in location $location" -ForegroundColor Yellow
+$aksVersions=$(az aks get-versions -l $location --query  values[].version -o json | ConvertFrom-Json)
+$aksLastVersion=$aksVersions[$aksVersions.Length-1]
+Write-Host "AKS last version is $aksLastVersion" -ForegroundColor Yellow
+$aksLastVersion="1.27.9"
+####
+
+
 
 $deploymentName = "cosmosdb-openai-azuredeploy"
 
